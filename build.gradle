@@ -6,15 +6,17 @@ repositories {
     mavenCentral()
 }
 
-group 'guru.qa'
-version '1.0'
-
 dependencies {
     testImplementation (
-            'org.junit.jupiter:junit-jupiter:5.9.3',
-            'com.codeborne:selenide:6.16.8'
-            )
+            "com.codeborne:selenide:6.16.0",
+            "org.junit.jupiter:junit-jupiter:5.9.3",
+            "org.slf4j:slf4j-simple:1.7.32")
 }
- test{
-     useJUnitPlatform()
- }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
