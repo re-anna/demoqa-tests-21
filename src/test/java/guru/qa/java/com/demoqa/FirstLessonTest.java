@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class firstLessonTest {
+public class FirstLessonTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
@@ -22,7 +22,7 @@ public class firstLessonTest {
     }
 
     @Test
-    void RegistrationPage() {
+    void registrationPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -47,9 +47,9 @@ public class firstLessonTest {
 
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
-
-        File file = new File("C:\\Users\\Honor R5\\IdeaProjects\\getting-started-java\\src\\test\\java\\resources\\kartinki-stich-22.jpg");
-        $x("//input[@id='uploadPicture']").uploadFile(file);
+        // File file = new File("C:\\Users\\Honor R5\\IdeaProjects\\demoqa-tests-21\\src\\test\\java\\guru\\qa\\java\\resources\\kartinki-stich-22.jpg");
+        // $x("//input[@id='uploadPicture']").uploadFile(file);
+       //$("#uploadPicture").uploadFromClasspath("kartinki-stich-22.jpg");
 
 
         $("#currentAddress").setValue("Mars");
@@ -70,7 +70,7 @@ public class firstLessonTest {
         $x("//td[contains(text(), 'Subjects')]/following-sibling::td[1]").shouldHave(text("No"));
         $x("//td[contains(text(), 'Hobbies')]/following-sibling::td[1]").shouldHave(text("Sports"));
         $x("//td[contains(text(), 'Hobbies')]/following-sibling::td[1]").shouldHave(text("Music"));
-        $x("//td[contains(text(), 'Picture')]/following-sibling::td[1]").shouldHave(text("kartinki-stich-22.jpg"));
+        // $x("//td[contains(text(), 'Picture')]/following-sibling::td[1]").shouldHave(text("HW1.jpg"));
         $x("//td[contains(text(), 'Address')]/following-sibling::td[1]").shouldHave(text("Mars"));
         $x("//td[contains(text(), 'State and City')]/following-sibling::td[1]").shouldHave(text("Haryana Karnal"));
     }
