@@ -13,6 +13,14 @@ dependencies {
             "org.slf4j:slf4j-simple:1.7.32")
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDir '/guru.qa.java/resources'
+        }
+    }
+}
+
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }

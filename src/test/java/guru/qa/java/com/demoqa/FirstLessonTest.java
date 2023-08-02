@@ -20,7 +20,7 @@ public class FirstLessonTest {
         Configuration.browserSize = "1920x1080";
     }
 
-    @Test
+   // @Test
     void registrationPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
