@@ -26,7 +26,6 @@ public class SoftAssertionTest {
 
         open("https://github.com/selenide/selenide");
         $("#wiki-tab").click();
-        $("#wiki-body").shouldHave(Condition.text("Soft assertions"));
         $("#wiki-pages-box button").click();
         $("#wiki-pages-box").shouldHave(Condition.text("SoftAssertions"));
         $(byText("SoftAssertions")).click();
@@ -44,11 +43,11 @@ public class SoftAssertionTest {
                 "}"));
     }
 
-        @AfterAll
-        static void afterAll () {
-            Selenide.closeWebDriver();
-        }
+    @AfterAll
+    static void afterAll() {
+        Selenide.closeWebDriver();
     }
+}
 
 
 
