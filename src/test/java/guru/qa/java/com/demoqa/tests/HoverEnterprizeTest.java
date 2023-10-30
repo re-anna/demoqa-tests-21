@@ -1,4 +1,4 @@
-package guru.qa.java.com.demoqa;
+package guru.qa.java.com.demoqa.tests;
 
 
 import com.codeborne.selenide.Configuration;
