@@ -1,5 +1,3 @@
-package guru.qa.java.com.demoqa;
-
 public class Operators {
     public static void main(String[] args) {
         // Арифметические операторы
@@ -50,5 +48,18 @@ public class Operators {
         System.out.println("int + double = " + (g + h));
         System.out.println("int / double = " + (g / h));
         System.out.println("______________________________________________");
+
+        // If Else...
+        if (sex == 'm') {
+            nameFirst = "Valera";
+        } else {
+            nameFirst = "Matia";
+        }
+
+        //Тернарный оператор. То же, что выше
+        char sex = 'm';
+        String nameFirst = sex == 'm'
+                ? "Valera"
+                : "Maria";
     }
 }
