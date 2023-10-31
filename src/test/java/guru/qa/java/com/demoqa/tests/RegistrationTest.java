@@ -1,22 +1,11 @@
 package guru.qa.java.com.demoqa.tests;
 
-import com.codeborne.selenide.Configuration;
 import guru.qa.java.com.demoqa.pages.RegistrationPage;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.List;
 
 public class RegistrationTest extends TestBase {
-
-    static {
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        Configuration.browserCapabilities = capabilities;
-    }
 
     RegistrationPage registrationPage = new RegistrationPage();
 
@@ -39,7 +28,7 @@ public class RegistrationTest extends TestBase {
 
         //Check info
         registrationPage.checkTableResult("Student Name", "Anna Voron")
-                .checkTableResult("Student Email", "\"new_mail_mail@test.ru")
+                .checkTableResult("Student Email", "new_mail_mail@test.ru")
                 .checkTableResult("Gender", "Female")
                 .checkTableResult("Mobile", "8109832019")
                 .checkTableResult("Date of Birth", "22 August,2000")

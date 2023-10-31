@@ -1,22 +1,11 @@
 package guru.qa.java.com.demoqa.tests;
 
-import com.codeborne.selenide.Configuration;
 import guru.qa.java.com.demoqa.pages.TextBoxPage;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TextBoxTest extends TestBase {
-
-    static {
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        Configuration.browserCapabilities = capabilities;
-    }
-
     TextBoxPage textBoxPage = new TextBoxPage();
+    private String textBoxPageUrl = "/text-box";
 
     @Test
     public void registrationTextBoxTest() {

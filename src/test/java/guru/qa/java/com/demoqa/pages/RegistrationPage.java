@@ -28,7 +28,6 @@ public class RegistrationPage {
             submitButton = $("#submit"),
             tableResultTr = $(".table-responsive");
 
-
     public RegistrationPage openPage() {
         open("automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
