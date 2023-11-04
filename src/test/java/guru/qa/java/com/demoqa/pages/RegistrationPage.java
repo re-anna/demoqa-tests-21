@@ -1,7 +1,8 @@
 package guru.qa.java.com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import guru.qa.java.com.demoqa.components.CalendarComponent;
+import guru.qa.java.com.demoqa.pages.components.CalendarComponent;
+import guru.qa.java.com.demoqa.pages.components.TableComponent;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
+    TableComponent table = new TableComponent();
     SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -30,6 +32,10 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("automation-practice-form");
+        return this;
+    }
+    public RegistrationPage removeBanners(){
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -93,8 +99,9 @@ public class RegistrationPage {
         submitButton.click();
         return this;
     }
-    public RegistrationPage checkTableResult(String checkField, String value) {
-        tableResultTr.$(byText(checkField)).parent().shouldHave(text(value));
+    public RegistrationPage checkTableResult(String name, String email, String gender, String phone, String birthDate, String subject,
+                                             String hobby, String fileName, String address, String stateCity) {
+        table.compareTableResult(name, email, gender, phone, birthDate, subject, hobby, fileName, address, stateCity);
         return this;
     }
 }
