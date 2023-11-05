@@ -25,10 +25,18 @@ public class RegistrationTest extends TestBase {
                 .setCurrentAddress("Mars")
                 .selectState("Haryana")
                 .selectCity("Karnal")
-                .submitRegistration()
-                .checkTableResult("Anna Voron", "new_mail_mail@test.ru", "Female", "8109832019",
-                        "22 August,2000", "English", "Music", "kartinki-stich-22.jpg",
-                        "Mars", "Haryana Karnal");
-    }
+                .submitRegistration();
 
+        registrationPage
+                .checkTableResult("Student Name","Anna Voron")
+                .checkTableResult("Student Email","new_mail_mail@test.ru")
+                .checkTableResult("Gender","Female")
+                .checkTableResult("Mobile","8109832019")
+                .checkTableResult("Date of Birth","22 August,2000")
+                .checkTableResult("Subjects","English")
+                .checkTableResult("Hobbies","Music")
+                .checkTableResult("Picture","kartinki-stich-22.jpg")
+                .checkTableResult("Address","Mars")
+                .checkTableResult("State and City","Haryana Karnal");
+    }
 }

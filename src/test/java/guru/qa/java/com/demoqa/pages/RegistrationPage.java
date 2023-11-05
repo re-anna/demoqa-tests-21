@@ -99,9 +99,8 @@ public class RegistrationPage {
         submitButton.click();
         return this;
     }
-    public RegistrationPage checkTableResult(String name, String email, String gender, String phone, String birthDate, String subject,
-                                             String hobby, String fileName, String address, String stateCity) {
-        table.compareTableResult(name, email, gender, phone, birthDate, subject, hobby, fileName, address, stateCity);
+    public RegistrationPage checkTableResult(String name, String value) {
+        $(".table-responsive").$(byText(value)).parent().shouldHave(text(value));
         return this;
     }
 }
