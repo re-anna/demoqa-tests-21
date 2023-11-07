@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
-    TableComponent table = new TableComponent();
+    TableComponent tableComponent = new TableComponent();
     SelenideElement
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
@@ -99,8 +99,8 @@ public class RegistrationPage {
         submitButton.click();
         return this;
     }
-    public RegistrationPage checkTableResult(String name, String value) {
-        $(".table-responsive").$(byText(value)).parent().shouldHave(text(value));
+    public RegistrationPage checkTableResult(String value) {
+        tableComponent.checkTableResult(value);
         return this;
     }
 }
